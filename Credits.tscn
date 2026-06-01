@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://c183ndmwrjtkl"]
+
+[ext_resource type="Script" path="res://Scenes/Credits.gd" id="1_st4ha"]
+[ext_resource type="Texture2D" uid="uid://dxbehu85t3p3l" path="res://Scripts/credits.png" id="2_pyxcy"]
+[ext_resource type="FontFile" uid="uid://pxloejj0yd78" path="res://Fonts/ComicRelief-Bold.ttf" id="3_br6nf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57xtg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4ekt"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_st4ha")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_pyxcy")
+
+[node name="returnButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -63.0
+offset_right = 143.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_br6nf")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_57xtg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d4ekt")
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="returnButton" to="." method="_on_return_button_pressed"]
